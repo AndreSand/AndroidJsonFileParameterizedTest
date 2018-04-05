@@ -1,0 +1,19 @@
+{
+  "numbers": [
+    {
+      "number_a": "1",
+      "number_b": "1",
+      "result": "2.0"
+    },
+    {
+      "number_a": "2",
+      "number_b": "3",
+      "result": "5.0"
+    },
+    {
+      "number_a": "10.2",
+      "number_b": "2.3",
+      "result": "12.5"
+    }
+  ]
+}
