@@ -26,6 +26,7 @@ import junit.framework.TestSuite;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -44,6 +45,9 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.example.asandoval.calculator.TestUtils.loadJSONFromAsset;
+import android.support.test.runner.AndroidJUnit4;
+import com.microsoft.appcenter.espresso.Factory;
+import com.microsoft.appcenter.espresso.ReportHelper;
 
 /**
  * Test parses Json file calculator-numbers.json to get inputs to add and the expected result.
@@ -81,6 +85,9 @@ public class CalculatorInstrumentationTestReadFile {
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(
             MainActivity.class);
+
+    @Rule
+    public ReportHelper reportHelper = Factory.getReportHelper();
 
     /**
      * With Parameters we can execute the same test over and over again using different values
@@ -136,6 +143,11 @@ public class CalculatorInstrumentationTestReadFile {
 
         // Check the expected test is displayed in the Ui
         onView(withId(R.id.operation_result_text_view)).check(matches(withText(expectedResult)));
+    }
+
+    @After
+    public void TearDown(){
+        reportHelper.label("Calculator parse json... stopping App");
     }
 
 }

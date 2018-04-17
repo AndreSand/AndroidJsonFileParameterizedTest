@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         mResultTextView = (TextView) findViewById(R.id.operation_result_text_view);
         mOperandOneEditText = (EditText) findViewById(R.id.operand_one_edit_text);
         mOperandTwoEditText = (EditText) findViewById(R.id.operand_two_edit_text);
+        AppCenter.start(getApplication(), "0ef8aff3-7eec-4ec7-82be-5b39b3cb86ab", Analytics.class, Crashes.class);
     }
 
     /**
