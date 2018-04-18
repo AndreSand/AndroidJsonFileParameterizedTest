@@ -8,14 +8,14 @@ With **Parameterized testing** we can execute the same test over and over again 
  * At work we used Parameterized testing to perform a test that needs to repeat many times depending on input.
 
 ## How to run:
-1. Git pll repo
+1. Git pull [repo](https://github.com/AndreSand/AndroidJsonFileParameterizedTest)
 2. Open with Android Studio 3.+
 3. Connect Android device
 4. Right click and run CalculatorInstrumentationTestReadFile.java or run gradle command `./gradlew connectedGoogleFlavorTuneinFreeArmv7aDebugAndroidTest`
 
 ## Test steps:
-1. Parses Json file to get values to add and also the result, A + B = result
-2. We pass the values to below operation.
+1. Parses Json file gets values to add and the result, A + B = result
+2. We pass the values to below operation:
         ```performOperation(R.id.operation_add_btn, sNumberA, sNumberB, sResult);```
 3. Adds all values and checks result
 
