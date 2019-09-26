@@ -5,7 +5,7 @@ import android.content.res.AssetManager;
 import java.io.IOException;
 import java.io.InputStream;
 
-import static android.support.test.InstrumentationRegistry.getContext;
+import static androidx.test.InstrumentationRegistry.getContext;
 
 public class TestUtils {
     /**
